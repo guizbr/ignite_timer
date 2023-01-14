@@ -4,6 +4,7 @@ import { Router } from './Router'
 
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
+import { CyclesContextProvider } from './context/CyclesContext'
 
 export function App() {
 	return (
@@ -11,7 +12,9 @@ export function App() {
 			<GlobalStyle></GlobalStyle>
 
 			<BrowserRouter>
-				<Router></Router>
+				<CyclesContextProvider>
+					<Router></Router>
+				</CyclesContextProvider>
 			</BrowserRouter>
 		</ThemeProvider>
 	)
